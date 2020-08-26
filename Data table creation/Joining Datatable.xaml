@@ -1,0 +1,115 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Joining_Datatable" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="926,1500" sap2010:WorkflowViewState.IdRef="Joining_Datatable_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="22">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="21">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="460,1335.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="Joining_Datatable" sap:VirtualizedContainerService.HintSize="418,1243.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="sd:DataTable" Name="dtProduct" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dtWallet" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dtProductDetails" />
+        <Variable x:TypeArguments="x:String" Name="StrProductDetails" />
+        <Variable x:TypeArguments="x:String" Name="StrProduct" />
+        <Variable x:TypeArguments="x:String" Name="StrWallet" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dtProductDetSorted" />
+        <Variable x:TypeArguments="x:String" Name="StrProductDetSorted" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Sequence DisplayName="Sorting_Datatable" sap:VirtualizedContainerService.HintSize="376,150.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="sd:DataTable" Name="dtProductdet" />
+          <Variable x:TypeArguments="sd:DataTable" Name="dtSorted" />
+          <Variable x:TypeArguments="x:String" Name="StrdtSorted" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:BuildDataTable DataTable="[dtProductdet]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="BuildDataTable_3" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Product_x0020_ID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Product_x0020_Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Product_x0020_Price&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;      &lt;xs:unique name=&quot;Constraint1&quot;&gt;&#xA;        &lt;xs:selector xpath=&quot;.//TableName&quot; /&gt;&#xA;        &lt;xs:field xpath=&quot;Product_x0020_ID&quot; /&gt;&#xA;      &lt;/xs:unique&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Product_x0020_ID&gt;981&lt;/Product_x0020_ID&gt;&#xA;    &lt;Product_x0020_Name&gt;Kurti&lt;/Product_x0020_Name&gt;&#xA;    &lt;Product_x0020_Price&gt;5000&lt;/Product_x0020_Price&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Product_x0020_ID&gt;781&lt;/Product_x0020_ID&gt;&#xA;    &lt;Product_x0020_Name&gt;Saree&lt;/Product_x0020_Name&gt;&#xA;    &lt;Product_x0020_Price&gt;6000&lt;/Product_x0020_Price&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Product_x0020_ID&gt;800&lt;/Product_x0020_ID&gt;&#xA;    &lt;Product_x0020_Name&gt;Tunics&lt;/Product_x0020_Name&gt;&#xA;    &lt;Product_x0020_Price&gt;4000&lt;/Product_x0020_Price&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Product_x0020_ID&gt;741&lt;/Product_x0020_ID&gt;&#xA;    &lt;Product_x0020_Name&gt;Tv&lt;/Product_x0020_Name&gt;&#xA;    &lt;Product_x0020_Price&gt;8000&lt;/Product_x0020_Price&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Product_x0020_ID&gt;101&lt;/Product_x0020_ID&gt;&#xA;    &lt;Product_x0020_Name&gt;Book&lt;/Product_x0020_Name&gt;&#xA;    &lt;Product_x0020_Price&gt;800&lt;/Product_x0020_Price&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;" />
+      </Sequence>
+      <ui:BuildDataTable DataTable="[dtProduct]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="376,58.6666666666667" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Product_x0020_ID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Product_x0020_Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Product_x0020_Price&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;      &lt;xs:unique name=&quot;Constraint1&quot;&gt;&#xA;        &lt;xs:selector xpath=&quot;.//TableName&quot; /&gt;&#xA;        &lt;xs:field xpath=&quot;Product_x0020_ID&quot; /&gt;&#xA;      &lt;/xs:unique&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Product_x0020_ID&gt;981&lt;/Product_x0020_ID&gt;&#xA;    &lt;Product_x0020_Name&gt;Kurti&lt;/Product_x0020_Name&gt;&#xA;    &lt;Product_x0020_Price&gt;5000&lt;/Product_x0020_Price&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Product_x0020_ID&gt;781&lt;/Product_x0020_ID&gt;&#xA;    &lt;Product_x0020_Name&gt;Saree&lt;/Product_x0020_Name&gt;&#xA;    &lt;Product_x0020_Price&gt;6000&lt;/Product_x0020_Price&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Product_x0020_ID&gt;800&lt;/Product_x0020_ID&gt;&#xA;    &lt;Product_x0020_Name&gt;Tunics&lt;/Product_x0020_Name&gt;&#xA;    &lt;Product_x0020_Price&gt;4000&lt;/Product_x0020_Price&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Product_x0020_ID&gt;741&lt;/Product_x0020_ID&gt;&#xA;    &lt;Product_x0020_Name&gt;Tv&lt;/Product_x0020_Name&gt;&#xA;    &lt;Product_x0020_Price&gt;8000&lt;/Product_x0020_Price&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Product_x0020_ID&gt;101&lt;/Product_x0020_ID&gt;&#xA;    &lt;Product_x0020_Name&gt;Book&lt;/Product_x0020_Name&gt;&#xA;    &lt;Product_x0020_Price&gt;800&lt;/Product_x0020_Price&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;" />
+      <ui:OutputDataTable DataTable="[dtProduct]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="376,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_2" Text="[StrProduct]" />
+      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="376,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[StrProduct]" />
+      <ui:BuildDataTable DataTable="[dtWallet]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="376,58.6666666666667" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Product_x0020_ID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Payment_x0020_Mode&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Wallet_x0020_Balance&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Product_x0020_ID&gt;981&lt;/Product_x0020_ID&gt;&#xA;    &lt;Payment_x0020_Mode&gt;Credit Card&lt;/Payment_x0020_Mode&gt;&#xA;    &lt;Wallet_x0020_Balance&gt;555&lt;/Wallet_x0020_Balance&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Product_x0020_ID&gt;400&lt;/Product_x0020_ID&gt;&#xA;    &lt;Payment_x0020_Mode&gt;Debit Card&lt;/Payment_x0020_Mode&gt;&#xA;    &lt;Wallet_x0020_Balance&gt;789.25&lt;/Wallet_x0020_Balance&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Product_x0020_ID&gt;781&lt;/Product_x0020_ID&gt;&#xA;    &lt;Payment_x0020_Mode&gt;Google Pay&lt;/Payment_x0020_Mode&gt;&#xA;    &lt;Wallet_x0020_Balance&gt;800&lt;/Wallet_x0020_Balance&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Product_x0020_ID&gt;891&lt;/Product_x0020_ID&gt;&#xA;    &lt;Payment_x0020_Mode&gt;UPI&lt;/Payment_x0020_Mode&gt;&#xA;    &lt;Wallet_x0020_Balance&gt;1000&lt;/Wallet_x0020_Balance&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Product_x0020_ID&gt;200&lt;/Product_x0020_ID&gt;&#xA;    &lt;Payment_x0020_Mode&gt;Cash on Delivery&lt;/Payment_x0020_Mode&gt;&#xA;    &lt;Wallet_x0020_Balance&gt;2000&lt;/Wallet_x0020_Balance&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;" />
+      <ui:OutputDataTable DataTable="[dtWallet]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="376,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_3" Text="[StrWallet]" />
+      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="376,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[StrWallet]" />
+      <ui:JoinDataTables DataTable1="[dtProduct]" DataTable2="[dtWallet]" DisplayName="Join Data Tables" sap:VirtualizedContainerService.HintSize="376,58.6666666666667" sap2010:WorkflowViewState.IdRef="JoinDataTables_1" JoinType="Inner" OutputDataTable="[dtProductDetails]">
+        <ui:JoinDataTables.Arguments>
+          <scg:List x:TypeArguments="ui:JoinOperationArgument" Capacity="4">
+            <ui:JoinOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EQ">
+              <ui:JoinOperationArgument.Column1>
+                <InArgument x:TypeArguments="x:String">["Product ID"]</InArgument>
+              </ui:JoinOperationArgument.Column1>
+              <ui:JoinOperationArgument.Column2>
+                <InArgument x:TypeArguments="x:String">["Product ID"]</InArgument>
+              </ui:JoinOperationArgument.Column2>
+            </ui:JoinOperationArgument>
+          </scg:List>
+        </ui:JoinDataTables.Arguments>
+      </ui:JoinDataTables>
+      <ui:OutputDataTable DataTable="[dtProductDetails]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="376,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[StrProductDetails]" />
+      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="376,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[StrProductDetails]" />
+      <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="Product ID" DataTable="[dtProductDetails]" DisplayName="Sort Data Table" sap:VirtualizedContainerService.HintSize="376,22" sap2010:WorkflowViewState.IdRef="SortDataTable_1" Order="Ascending" OutputDataTable="[dtProductDetSorted]" SortOrder="Ascending" />
+      <ui:OutputDataTable DataTable="[dtProductDetSorted]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="376,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_4" Text="[StrProductDetSorted]" />
+      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="376,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[StrProductDetSorted]" />
+    </Sequence>
+  </Sequence>
+</Activity>
